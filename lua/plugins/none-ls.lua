@@ -4,15 +4,22 @@ return {
 		local null_ls = require("null-ls")
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.diagnostics.erb_lint,
-				null_ls.builtins.diagnostics.eslint_d,
-				null_ls.builtins.diagnostics.rubocop,
-				null_ls.builtins.formatting.rubocop,
+        -- Customize your formatters and linters 
+				null_ls.builtins.formatting.stylua, -- lua 
+				null_ls.builtins.formatting.prettier, -- general
+				null_ls.builtins.formatting.black, -- python
+				null_ls.builtins.formatting.isort, -- python 
+				null_ls.builtins.diagnostics.erb_lint, -- html/ruby 
 			},
 		})
-
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-	end,
+  
+    -- Keymaps 
+		vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {})
+    
+    -- Custom which-key descriptions
+    local wk = require("which-key")
+      wk.register({
+        ["<leader>cf"] = {"Format File"},
+      })
+  end,
 }

@@ -1,12 +1,12 @@
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
-		"leoluz/nvim-dap-go",
+		"leoluz/nvim-dap-go", -- Example for .go files 
 		"rcarriga/nvim-dap-ui",
 	},
 	config = function()
     require("dapui").setup()
-		require("dap-go").setup()
+		require("dap-go").setup() -- Example for .go files 
 
 		local dap, dapui = require("dap"), require("dapui")
 
@@ -22,10 +22,21 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
-
+    
+    -- Keymaps
 		vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
 		vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>")
 		vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
 		vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
-	end,
+
+    -- Custom which-key descriptions
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>d"] = {"Debugging"},
+      ["<leader>dt"] = {"Toggle Breakpoint"},
+      ["<leader>dc"] = {"Start Debugging"},
+      ["<leader>dx"] = {"Stop Debugging"},
+      ["<leader>do"] = {"Step Over"},
+    })
+  end,
 }
