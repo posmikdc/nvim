@@ -8,15 +8,15 @@ return {
     vim.g.vimtex_view_skim_activate = 1 -- Value 1 allows change focus to skim after command `:VimtexView` is given
     
     -- Keymaps 
-		vim.keymap.set("n", "<leader>xl", ":VimtexCompile<CR>")
-    vim.keymap.set("n", "<leader>xv", ":VimtexView<CR>")
+		vim.keymap.set("n", "<localleader>ll", ":VimtexCompile<CR>")
+    vim.keymap.set("n", "<localleader>lv", ":VimtexView<CR>")
     
     -- Custom which-key descriptions
     local wk = require("which-key")
       wk.register({
-        ["<leader>x"] = {"VimTex"},
-        ["<leader>xl"] = {"Begin Compiler"},
-        ["<leader>xv"] = {"View"},
+        ["<localleader>l"] = {"VimTex"},
+        ["<localleader>ll"] = {"Begin Compiler"},
+        ["<localleader>lv"] = {"View"},
       })
   end,
 }
