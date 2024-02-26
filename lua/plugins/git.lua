@@ -9,14 +9,16 @@ return {
 
       -- Keymaps
       vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-      vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+      vim.keymap.set("n", "<leader>gl", ":Gitsigns toggle_current_line_blame<CR>", {})
+      vim.keymap.set("n", "<leader>gb", ":Git blame <CR>", {})
 
       -- Custom which-key descriptions
       local wk = require("which-key")
       wk.register({
         ["<leader>g"] = { "Git" },
         ["<leader>gp"] = { "Preview Hunk" },
-        ["<leader>gt"] = { "Blame Current" },
+        ["<leader>gl"] = { "Toggle Line Blame" },
+        ["<leader>gb"] = { "Blame History" },
       })
     end
   }
