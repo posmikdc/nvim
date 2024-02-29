@@ -12,14 +12,11 @@ return {
 				null_ls.builtins.diagnostics.erb_lint, -- html/ruby 
 			},
 		})
-  
-    -- Keymaps 
-		vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {})
-    
+   
     -- Custom which-key descriptions
     local wk = require("which-key")
       wk.register({
-        ["<leader>cf"] = {"Format File"},
+        ["<leader>ff"] = {"Format File"},
       })
   end,
 }

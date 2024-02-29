@@ -29,18 +29,12 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-
-      -- Keymaps
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-    
+   
       -- Custom which-key descriptions
       local wk = require("which-key")
         wk.register({
-          ["<leader>c"] = {"Code/Format"},
-          ["<leader>ca"] = {"Code Actions"},
+          ["<leader>f"] = {"Format Code"},
+          ["<leader>fa"] = {"Code Actions"},
       })
     end,
   },
