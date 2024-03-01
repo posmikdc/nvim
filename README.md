@@ -55,13 +55,15 @@ LSPs (Language Server Protocols) allow for communication between text editors an
 
 This is where it gets interesting. In the following section, I will elaborate on the plugins I have added to the typecraft config, what they do, and why I added them. 
 
-### LaTeX Workflow
+### Text Editing Workflow (i.e. `.tex`, `.md`)
 
 I use `vimtex.lua` to manage my LaTeX workflow. Since I operate on MacOS, I have opted to use [Skim](https://skim-app.sourceforge.io) as my pdf compiler (Make sure you have it installed locally). It offers easy integration and allows for neat tools like forward search (quickly locate a LaTeX chunk on the compiled pdf version). 
 
-`vimtex.lua` is easy to use. You first activate the compiler (My keybinding: `<localleader>ll`) and then your pdf should pop up. On each save, `:w`, the pdf will recompile. 
+`vimtex.lua` is easy to use. You first activate the compiler (My keybinding: `<localleader>ll`) and then your pdf should pop up. On each save, `:w`, the pdf will recompile.
 
-### Data Science Workflow
+I use `markdown-preview.nvim` to manage my markdown workflow. It is a simple plugin that allows you to preview your markdown files in a browser. I have set it up such that my `.md` files compile in a browser every time I save the document (`:w`).
+
+### Data Science Workflow (i.e. `.qmd`, `.Rmd`)
 
 This was the most challenging component of my workflow to translate into NeoVim. I am a heavy R user and I love how easy it is to work with `.Rmd` documents using RStudio in real time. 
 
@@ -71,11 +73,16 @@ I think of `.qmd` as a flexible, language-agnostic supercharged markdown. Simila
 
 A very [helpful YouTube series](https://www.youtube.com/watch?v=3sj7clNowlA) on the use of Quarto in NeoVim helped me tremendously. 
 
-### Coding Workflow and Slime 
+### Coding Workflow (i.e. `.py`, `.jl`, `.R`)
 
 In the same spirit as above, I was looking for one plugin that can manage all my coding needs. I opted for `vim-slime`, a plugin that allows you to select any code and send it to a live REPL. 
 
-My coding workflow is different from my data science workflow in that I may not always want to compile a full report but just quickly run a few lines of code. 
+My coding workflow is different from my data science workflow in that I may not always want to compile a full report but just quickly run a few lines of code.
 
+### Miscellaneous
 
+I have added a few other plugins that I find helpful. For example, `nvim-tree.lua` is a file tree that I find helpful. Moreover, I have added `nvim-dap` for debugging and `nvim-treesitter` for syntax highlighting and code structure. Lastly, I have added `nvim-lspconfig` to manage my language servers and `nvim-cmp` for autocompletions.
 
+## Contact
+
+Please reach out to me if you have any questions or suggestions. I am always looking to improve my workflow. My email is [posmikdc@gmail.com](mailto:). 
