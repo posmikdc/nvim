@@ -29,12 +29,12 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-   
+
       -- Custom which-key descriptions
       local wk = require("which-key")
-        wk.register({
-          ["<leader>f"] = {"Format Code"},
-          ["<leader>fa"] = {"Code Actions"},
+      wk.register({
+        ["<leader>f"] = { "Format Code" },
+        ["<leader>fa"] = { "Code Actions" },
       })
     end,
   },

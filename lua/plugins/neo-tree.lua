@@ -7,5 +7,10 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
+    --  Custom which-key descriptions
+    require("which-key").register({
+      ["C"] = { "Quick Actions" },
+      ["C-n"] = { "Neo-Tree" },
+    })
   end,
 }
