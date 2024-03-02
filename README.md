@@ -75,13 +75,16 @@ A very [helpful YouTube series](https://www.youtube.com/watch?v=3sj7clNowlA) on 
 
 ### Coding Workflow (i.e. `.py`, `.jl`, `.R`)
 
-In the same spirit as above, I was looking for one plugin that can manage all my coding needs. I opted for `vim-slime`, a plugin that allows you to select any code and send it to a live REPL. 
+In the same spirit as above, I was looking for one plugin that can manage all my coding needs. I opted for `vim-slime`, a plugin that allows you to select any code and send it to a live REPL. My coding workflow is somewhat different from my data science workflow in that I may not always want to compile a full report but just quickly run a few lines of code.
 
-My coding workflow is different from my data science workflow in that I may not always want to compile a full report but just quickly run a few lines of code.
+### Snippets and Templates
 
-### Miscellaneous
+I use `LuaSnip` and `nvim-cmp` to manage my snippets and templates. In a nutshell, I have load the respective packages in the `completions.lua` file. Within that file, I reference my configuration file for my snippets `snippets.lua` in `~/config/nvim/snippets.lua`. This file contains a configuration as well as the reference to my actual snippets. My snippets and templates can be found in `~/config/nvim/snippets`. 
 
-I have added a few other plugins that I find helpful. For example, `nvim-tree.lua` is a file tree that I find helpful. Moreover, I have added `nvim-dap` for debugging and `nvim-treesitter` for syntax highlighting and code structure. Lastly, I have added `nvim-lspconfig` to manage my language servers and `nvim-cmp` for autocompletions.
+<!-- https://q.uiver.app/#q=WzAsNixbMSwwLCJcXHRleHR7fi5jb25maWcvbnZpbS9sdWEvcGx1Z2lucy9cXHRleHRiZntjb21wbGV0aW9ucy5sdWF9fSJdLFsxLDIsIlxcdGV4dHt+LmNvbmZpZy9udmltL2x1YS9cXHRleHRiZntzbmlwcGV0cy5sdWF9fSJdLFsxLDQsIlxcdGV4dHt+LmNvbmZpZy9udmltL1xcdGV4dGJme3NuaXBwZXRzfX0iXSxbMCw1LCJcXHRleHR7YWxsLmx1YX0iXSxbMSw2LCJcXHRleHR7dGV4Lmx1YX0iXSxbMiw1LCJcXHRleHR7PGZpbGVuYW1lPi5sdWF9Il0sWzAsMV0sWzEsMl0sWzIsM10sWzIsNF0sWzIsNV1d -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMSwwLCJcXHRleHR7fi5jb25maWcvbnZpbS9sdWEvcGx1Z2lucy9cXHRleHRiZntjb21wbGV0aW9ucy5sdWF9fSJdLFsxLDIsIlxcdGV4dHt+LmNvbmZpZy9udmltL2x1YS9cXHRleHRiZntzbmlwcGV0cy5sdWF9fSJdLFsxLDQsIlxcdGV4dHt+LmNvbmZpZy9udmltL1xcdGV4dGJme3NuaXBwZXRzfX0iXSxbMCw1LCJcXHRleHR7YWxsLmx1YX0iXSxbMSw2LCJcXHRleHR7dGV4Lmx1YX0iXSxbMiw1LCJcXHRleHR7PGZpbGVuYW1lPi5sdWF9Il0sWzAsMV0sWzEsMl0sWzIsM10sWzIsNF0sWzIsNV1d&embed" width="800" height="300" style="border-radius: 8px; border: none;"></iframe>
+
+I have split up the snippets into different files, e.g., `all.lua`, `tex.lua`, `r.lua`, `julia.lua`, etc. The respective `<filetype>.lua` files contain (1) a definition of local variables and abbreviations in line with the official LuaSnip documentation, (2) helper functions, and (3) the actual snippets.
 
 ## Contact
 
