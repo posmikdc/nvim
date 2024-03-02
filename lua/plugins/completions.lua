@@ -12,7 +12,7 @@ return {
       "rafamadriz/friendly-snippets", -- TODO: Phase out with custom plugins. 
     },
     config = function()
-      require('snippets') 
+      require('snippets')
       -- Specify location of the snippets.lua config files
       -- Note that this is distinct from the snippets folder containing the snippets themselves
       -- The snippets.lua file references the snippets folder to load the snippets
@@ -57,4 +57,3 @@ return {
     end,
   },
 }
-
