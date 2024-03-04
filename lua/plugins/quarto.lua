@@ -1,38 +1,36 @@
 return {
-  -- this taps into vim.ui.select and vim.ui.input
-  -- and in doing so currently breaks renaming in otter.nvim
-  { "stevearc/dressing.nvim", enabled = false },
-
   {
-    "quarto-dev/quarto-nvim",
-    opts = {
-      lspFeatures = {
-        languages = { "r", "python", "julia", "bash", "html", "lua" }, -- Modify if we need more languages 
-      },
-    },
-    ft = "quarto",
-
-    -- Keymaps
-    keys = {
-      { "<localleader>qa", ":QuartoActivate<cr>" },
-      { "<localleader>qp", ":lua require'quarto'.quartoPreview()<cr>" },
-      { "<localleader>qq", ":lua require'quarto'.quartoClosePreview()<cr>" },
-      { "<localleader>qh", ":QuartoHelp " },
-      { "<localleader>qe", ":lua require'otter'.export()<cr>" },
-      { "<localleader>qf", ":lua require'otter'.export(true)<cr>" },
-      { "<localleader>qb", ":QuartoSendAbove<cr>" },
-      { "<localleader>qs", ":QuartoSendAll<cr>" },
-      { "<leader><cr>",    ":SlimeSend<cr>" },
-      { "<c-cr>",          ":SlimeSend<cr>" },
-      { "<c-cr>",          "<esc>:SlimeSend<cr>i" },
-      { "<c-cr>",          "<Plug>SlimeRegionSend<cr>",                    mode = "v" },
-      { "<cr>",            "<Plug>SlimeRegionSend<cr>",                    mode = "v" },
-      { "<leader>ctr",     ":split term://R<cr>" },
-      { "<leader>cti",     ":split term://ipython<cr>" },
-      { "<leader>ctp",     ":split term://python<cr>" },
-      { "<leader>ctj",     ":split term://julia<cr>" },
+    "stevearc/dressing.nvim", enabled = false
+  }, {
+  "quarto-dev/quarto-nvim",
+  opts = {
+    lspFeatures = {
+      languages = { "r", "python", "julia", "bash", "html", "lua" }, -- Modify if we need more languages
     },
   },
+  ft = "quarto",
+
+  -- Keymaps
+  keys = {
+    { "<localleader>qa", ":QuartoActivate<cr>" },
+    { "<localleader>qp", ":lua require'quarto'.quartoPreview()<cr>" },
+    { "<localleader>qq", ":lua require'quarto'.quartoClosePreview()<cr>" },
+    { "<localleader>qh", ":QuartoHelp " },
+    { "<localleader>qe", ":lua require'otter'.export()<cr>" },
+    { "<localleader>qf", ":lua require'otter'.export(true)<cr>" },
+    { "<localleader>qb", ":QuartoSendAbove<cr>" },
+    { "<localleader>qs", ":QuartoSendAll<cr>" },
+    { "<leader><cr>",    ":SlimeSend<cr>" },
+    { "<c-cr>",          ":SlimeSend<cr>" },
+    { "<c-cr>",          "<esc>:SlimeSend<cr>i" },
+    { "<c-cr>",          "<Plug>SlimeRegionSend<cr>",                    mode = "v" },
+    { "<cr>",            "<Plug>SlimeRegionSend<cr>",                    mode = "v" },
+    { "<leader>ctr",     ":split term://R<cr>" },
+    { "<leader>cti",     ":split term://ipython<cr>" },
+    { "<leader>ctp",     ":split term://python<cr>" },
+    { "<leader>ctj",     ":split term://julia<cr>" },
+  },
+},
 
   {
     "jmbuhr/otter.nvim",
