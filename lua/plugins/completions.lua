@@ -3,24 +3,13 @@ return {
     "hrsh7th/cmp-nvim-lsp"
   },
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        filetypes = {
-          markdown = true, -- override default
-          quarto = true,
-          latex = true,
-        },
-      })
-    end,
+    "github/copilot.lua"
   },
   {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup({
-        suggestion = { enabled = false }, -- toggles ghost text suggestions 
+        suggestion = { enabled = false }, -- toggles ghost text suggestions
         panel = { enabled = false },
       })
     end,
