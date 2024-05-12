@@ -9,7 +9,7 @@ return {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup({
-        suggestion = { enabled = false }, -- toggles ghost text suggestions
+        suggestion = { enabled = true }, -- toggles ghost text suggestions
         panel = { enabled = false },
       })
     end,
