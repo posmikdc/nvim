@@ -10,7 +10,7 @@ return {
     config = function()
       require("copilot_cmp").setup({
         suggestion = { enabled = true }, -- toggles ghost text suggestions
-        panel = { enabled = false },
+        panel = { enabled = true },
       })
     end,
   },
