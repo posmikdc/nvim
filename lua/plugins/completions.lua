@@ -5,15 +5,15 @@ return {
   {
     "github/copilot.lua"
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup({
-        suggestion = { enabled = true }, -- toggles ghost text suggestions
-        panel = { enabled = true },
-      })
-    end,
-  },
+  -- {
+    -- "zbirenbaum/copilot-cmp",
+    -- config = function()
+      -- require("copilot_cmp").setup({
+        -- suggestion = { enabled = true }, -- toggles ghost text suggestions
+        -- panel = { enabled = true },
+      -- })
+    -- end,
+  -- },
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
@@ -119,9 +119,10 @@ return {
         -- Sources for completion suggestions
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
+          { name = "copilot"},
           { name = "luasnip" }, -- For luasnip users.
           { name = "path" },
-          { name = "otter" },   -- for code chunks in quarto
+          { name = "otter" }, -- for code chunks in quarto
         }, {
           { name = "buffer" },
         }),
@@ -132,7 +133,7 @@ return {
       -- Note: We could also note vscode snippets for only certain languages, e.g.: Python
       -- Python example: require("luasnip.loaders.from_vscode").load({ include = { "python" } })
 
-      -- link quarto and rmarkdown to markdown type snippets
+      -- link quarto and rmarkdown types to markdown type snippets
       luasnip.filetype_extend('quarto', { 'markdown' })
       luasnip.filetype_extend('rmarkdown', { 'markdown' })
     end,
