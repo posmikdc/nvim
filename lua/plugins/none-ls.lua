@@ -12,7 +12,6 @@ return {
 				null_ls.builtins.diagnostics.erb_lint, -- html/ruby 
 			},
 		})
-   
     -- Custom which-key descriptions
     local wk = require("which-key")
       wk.register({
