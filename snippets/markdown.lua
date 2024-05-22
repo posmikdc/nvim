@@ -27,7 +27,7 @@ local date = function()
 end
 
 -- Snippets {{{ 
-ls.add_snippets("all", {
+ls.add_snippets("markdown", {
   -- YAML meta header for markdown
   s("meta", {
     t({"---",

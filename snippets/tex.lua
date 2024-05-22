@@ -20,6 +20,7 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
+-- Helper functions {{{
 local rec_ls
 rec_ls = function()
   return sn(
@@ -31,21 +32,24 @@ rec_ls = function()
     })
   )
 end
+-- }}}
 
+-- Snippets {{{ 
 ls.add_snippets("tex", {
-  -- rec_ls is self-referencing. That makes this snippet 'infinite' eg. have as many
-  -- \item as necessary by utilizing a choiceNode.
+  -- Itemize 
   s("item", {
     t({ "\\begin{itemize}", "\t\\item " }),
     i(1),
-    d(2, rec_ls, {}),
+    d(2, rec_ls, {}), -- rec_ls is self-referencing. That makes this snippet 'infinite' eg. have as many \item as necessary by utilizing a choiceNode.
     t({ "", "\\end{itemize}" }),
   }),
-  -- New snippet for expanding "eqn" into the specified equation format
+  -- Equation 
   s("eqn", {
-    t({ "\\[", "\\begin{aligned}"}),
-    i(1,"Some math here"), t({"," ,"\t\\quad", i(2, "Description here")}),
-    t({ "\\end{aligned}", '\\]' }),
+    t({ "\\[", "\\begin{aligned}", " " }),
+    i(1, "Math here (don't forget &= for alignment)"),
+    t({ ", \\quad \\text{" }),
+    i(2, "Description here"),
+    t({ "} \\\\", "\\end{aligned}", "\\]" }),
   }),
 }, {
   key = "tex",
