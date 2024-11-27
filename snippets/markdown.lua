@@ -31,20 +31,39 @@ ls.add_snippets("markdown", {
   -- YAML meta header for markdown
   s("meta", {
     t({"---",
-    "title: "}), i(1, "note_title"), t({"",
-    "author: "}), i(2, "author"), t({"",
+    "title: "}), i(1, "title"), t({"",
+    "author: Daniel Posmik",
     "date: "}), f(date, {}), t({"",
-    "output: "}), c(3, {
-      t("html "),
-			t("pdf ")
+    "output: "}), c(2, {
+      t("html"),
+      t("pdf")
     }), t({"",
-    "toc: "}), c(4, {
-      t("true "),
-			t("false")
+    "toc: "}), c(3, {
+      t("true"),
+      t("false")
+    }), t({"",
+    "number_sections: "}), c(4, {
+      t("true"),
+      t("false")
     }), t({"",
     "---", ""}),
-    i(0)
+    i(0), -- Cursor ends here
+    t({"",
+    "\\newpage",
+    "",
+    "```{r setup, include=FALSE}",
+    "# Set up knit environment",
+    "knitr::opts_chunk$set(echo = F)",
+    "knitr::opts_chunk$set(error = F)",
+    "knitr::opts_chunk$set(warning = F)",
+    "knitr::opts_chunk$set(message = F)",
+    "```",
+    "",
+    "# **Code Appendix**",
+    "",
+    "```{r, ref.label = knitr::all_labels()}",
+    "#| echo: true",
+    "#| eval: false",
+    "```", ""})
   }),
 })
-
-
