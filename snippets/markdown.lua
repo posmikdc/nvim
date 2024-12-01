@@ -34,7 +34,7 @@ ls.add_snippets("markdown", {
     "title: "}), i(1, "title"), t({"",
     "author: Daniel Posmik",
     "date: "}), f(date, {}), t({"",
-    "output: "}), c(2, {
+    "format: "}), c(2, {
       t("html"),
       t("pdf")
     }), t({"",
