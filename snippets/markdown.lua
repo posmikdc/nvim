@@ -28,19 +28,39 @@ end
 
 -- Snippets {{{ 
 ls.add_snippets("markdown", {
-  -- YAML meta header for markdown
-  s("meta", {
+  -- Beamer slides meta snippet
+  s("meta-beamer", {
+    t({"---",
+    "title: "}), i(1, "Title"), t({"",
+    "author: Daniel C. Posmik",
+    "date: today",
+    "institute: Brown University School of Public Health, Department of Biostatistics",
+    "#bibliography: references.bib",
+    "toc: "}), c(2, {
+      t("true"),
+      t("false")
+    }), t({"",
+    "format:",
+    "  beamer:",
+    "    include-in-header: \"/Users/posmikdc/Documents/assets/latex/beamer/beamerthememinimal.sty\"",
+    "    #titlegraphic: background.png",
+    "---", "",
+    }), i(0) -- Cursor ends here
+  }),
+
+  -- Report meta snippet
+  s("meta-report", {
     t({"---",
     "title: "}), i(1, "title"), t({"",
     "author: Daniel Posmik",
-    "date: "}), f(date, {}), t({"",
+    "date: today"}), t({"",
     "format: "}), c(2, {
-      t("html"),
-      t("pdf")
+      t("pdf"),
+      t("html")
     }), t({"",
     "toc: "}), c(3, {
-      t("true"),
-      t("false")
+      t("false"),
+      t("true")
     }), t({"",
     "number_sections: "}), c(4, {
       t("true"),
