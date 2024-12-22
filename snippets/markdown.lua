@@ -31,21 +31,24 @@ ls.add_snippets("markdown", {
   -- Beamer slides meta snippet
   s("meta-beamer", {
     t({"---",
-    "title: "}), i(1, "Title"), t({"",
-    "author: Daniel C. Posmik",
+    "title: "}), i(1, "A Fancy Title"), t({"",  -- Title text node
+    "#subtitle: A Subtitle",  -- Subtitle line (commented out for optional use)
+    "author: Daniel C. Posmik (He/Him/His)", 
     "date: today",
     "institute: Brown University School of Public Health, Department of Biostatistics",
-    "#bibliography: references.bib",
-    "toc: "}), c(2, {
-      t("true"),
-      t("false")
-    }), t({"",
+    "#bibliography: references.bib",  -- Bibliography line remains commented out
+    "toc: "}), c(2, {  -- Choice node for TOC
+      t("false"),
+      t("true")
+    }), t({"",  -- Formatting and additional settings
     "format:",
     "  beamer:",
+    "    aspectratio: 43",  -- Aspect ratio added
     "    include-in-header: \"/Users/posmikdc/Documents/assets/latex/beamer/beamerthememinimal.sty\"",
-    "    #titlegraphic: background.png",
+    "    titlegraphic: background.png",  -- Title graphic option
     "---", "",
-    }), i(0) -- Cursor ends here
+    }),
+    i(0)  -- Cursor ends here
   }),
 
   -- Report meta snippet
