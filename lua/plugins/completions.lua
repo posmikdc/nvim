@@ -6,29 +6,49 @@ return {
   --  "github/copilot.vim"
   -- },
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets", -- TODO: Phase out with custom plugins.
-    },
-    config = function()
-      -- Specify location of the snippets.lua config files
-      require('snippets') -- Note that this file is distinct from the snippets folder containing the snippets themselves, rather this file is a configuration file for the snippets plugin.
-
-      local ls = require("luasnip")
-
-      -- Key mappings for LuaSnip
-      vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-      vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump(1) end, {silent = true})
-      vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
-      vim.keymap.set({"i", "s"}, "<C-E>", function()
-        if ls.choice_active() then
-          ls.change_choice(1)
-        end
-      end, {silent = true})
-    end,
+  "L3MON4D3/LuaSnip",
+  dependencies = {
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets", -- Friendly snippets are a nice collection of common snippets
   },
-  {
+  config = function()
+    -- Specify location of the snippets.lua config files
+    require('snippets') -- Configuration for LuaSnip
+    local ls = require("luasnip")
+    
+    -- LuaSnip Keymaps
+    vim.keymap.set({ "i", "s" }, "<c-k>", function()
+      if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+      end
+    end, { silent = true })
+    
+    vim.keymap.set({ "i", "s" }, "<c-j>", function()
+      if ls.jumpable(-1) then
+        ls.jump(-1)
+      end
+    end, { silent = true })
+    
+    vim.keymap.set({ "i", "s" }, "<c-l>", function()
+      if ls.choice_active() then
+        ls.change_choice(1)
+      end
+    end, { silent = true })
+    
+    vim.keymap.set({ "i", "s" }, "<c-h>", function()
+      if ls.choice_active() then
+        ls.change_choice(-1)
+      end
+    end, { silent = true })
+
+    vim.keymap.set({ "i", "s" }, "<c-y>", function()
+      if ls.choice_active() then
+        ls.select_choice()
+      end
+    end, { silent = true })
+  end,
+  },
+   {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
