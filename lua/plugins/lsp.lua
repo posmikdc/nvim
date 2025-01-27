@@ -40,7 +40,7 @@ return {
 
       local lspconfig = require("lspconfig")
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
 
