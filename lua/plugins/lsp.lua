@@ -85,7 +85,7 @@ return {
 			end
 
 			-- Add keymapping to force LSP initialization
-			vim.keymap.set("n", "<leader>l", function()
+			vim.keymap.set("n", "<localleader>o", function()
 				-- Get active LSP clients
 				local active_clients = vim.lsp.get_active_clients()
 
@@ -113,7 +113,7 @@ return {
 
 				-- Show LSP info
 				vim.cmd("LspInfo")
-			end, { desc = "LSP Initialization" })
+			end, { desc = "Toggle Otter" })
 		end,
 	},
 }
